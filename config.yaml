@@ -1,0 +1,36 @@
+# Configuration file for drywall segmentation project
+
+datasets:
+  - name: drywall_join
+    #prompt: "segment taping area"
+    save_path: models/clipseg_drywall_join.pth
+  - name: cracks
+    #prompt: "segment crack"
+    save_path: models/clipseg_cracks.pth
+
+dataset:
+  raw_folder: dataset_preprocessing/raw
+  processed_folder: dataset_preprocessing/data
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  img_size: 512
+
+training:
+  batch_size: 8
+  learning_rate: 0.0001
+  epochs: 20
+  weight_decay: 0.0001
+  device: cuda
+
+model:
+  pretrained_model_name: CIDAS/clipseg-rd64-refined
+
+inference:
+  threshold: 0.5
+  output_folder: model_training/results
+
+logging:
+  log_file: logs/training.log
+  log_level: INFO
+ 
