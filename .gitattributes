@@ -1,0 +1,4 @@
+dataset_preprocessing/raw/*.zip filter=lfs diff=lfs merge=lfs -text
+model_training/models/*.pth filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
